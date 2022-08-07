@@ -1,9 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const adminRouter = require("./backend/routes/admin");
-const authRouter = require("./backend/routes/auth");
-const productRouter = require("./backend/routes/product");
-const userRouter = require("./backend/routes/user");
+const authRouter = require("./routes/auth")
+const productRouter = require("./routes/product")
+const adminRouter = require("./routes/admin")
+const userRouter = require("./routes/user")
+
 require("dotenv").config()
 
 
@@ -23,11 +24,11 @@ app.use(userRouter);
 
 
 //DatabaseConnection
-// mongoose.connect(process.env.DB_STRING).then(()=> {
-//     console.log("Connected to Database Successfully");
-// }).catch((e) => {
-//     console.log(e);
-// })
+mongoose.connect(process.env.DB).then(()=> {
+    console.log("Connected to Database Successfully");
+}).catch((e) => {
+    console.log(e);
+})
 
 
 app.listen(PORT, "0.0.0.0", () => {
