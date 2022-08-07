@@ -23,11 +23,11 @@ app.use(userRouter);
 
 
 //DatabaseConnection
-mongoose.connect(process.env.DB_STRING).then(()=> {
-    console.log("Connected to Database Successfully");
-}).catch((e) => {
-    console.log(e);
-})
+// mongoose.connect(process.env.DB_STRING).then(()=> {
+//     console.log("Connected to Database Successfully");
+// }).catch((e) => {
+//     console.log(e);
+// })
 
 
 app.listen(PORT, "0.0.0.0", () => {
